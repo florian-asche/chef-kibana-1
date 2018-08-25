@@ -51,7 +51,8 @@ template File.join(node['kibana']['base_dir'], config_path) do
     index:          node['kibana']['index'],
     defaultapp:     node['kibana']['defaultapp'],
     logging_option: node['kibana']['logging_option'],
-    extra_config:   node['kibana']['extra_config']
+    extra_config:   node['kibana']['extra_config'],
+    elasticsearch_basicauth: node['kibana']['elasticsearch_basicauth']
   )
   notifies :restart, 'service[kibana]'
 end
