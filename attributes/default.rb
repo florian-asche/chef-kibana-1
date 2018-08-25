@@ -78,6 +78,8 @@ default['kibana']['highlighted_field'] = '@message'
 default['kibana']['primary_field'] = '@message'
 default['kibana']['default_index'] = '@message'
 
+default['kibana']['elasticsearch_basicauth'] = nil
+
 #<> The host to create apache vhost for.
 default['kibana']['apache']['host'] = node['fqdn']
 #<> The interface on which to bind apache.
