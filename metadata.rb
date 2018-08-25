@@ -20,6 +20,8 @@ depends 'build-essential'
 depends 'ark'
 depends 'apt'
 
+depends 'nginx'
+
 # For compatibility with 12.X versions of Chef
 depends 'compat_resource'
 
