@@ -2,6 +2,8 @@
 
 apt_update 'update apt' if node['platform_family'] == 'debian'
 
+node.override['nginx']['default_site_enabled'] = false
+
 include_recipe 'nginx'
 
 node.override['nginx']['default_site_enabled'] = false
