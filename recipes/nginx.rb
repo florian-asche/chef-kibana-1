@@ -4,6 +4,8 @@ apt_update 'update apt' if node['platform_family'] == 'debian'
 
 include_recipe 'nginx'
 
+node.default['nginx']['default_site_enabled'] = false
+
 template File.join(node['nginx']['dir'], 'sites-available', 'kibana') do
   source node['kibana']['nginx']['source']
   cookbook node['kibana']['nginx']['cookbook']
