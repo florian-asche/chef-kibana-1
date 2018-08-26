@@ -3,10 +3,11 @@
 apt_update 'update apt' if node['platform_family'] == 'debian'
 
 node.override['nginx']['default_site_enabled'] = false
+node.override['nginx']['proxy_buffer_size'] = "128k"
+node.override['nginx']['proxy_buffers'] = "4 256k"
+node.override['nginx']['proxy_busy_buffers_size'] = "256k"
 
 include_recipe 'nginx'
-
-node.override['nginx']['default_site_enabled'] = false
 
 template File.join(node['nginx']['dir'], 'sites-available', 'kibana') do
   source node['kibana']['nginx']['source']
